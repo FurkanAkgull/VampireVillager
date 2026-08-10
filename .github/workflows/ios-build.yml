@@ -30,6 +30,23 @@ jobs:
       - name: Build iOS (no codesign)
         run: flutter build ios --release --no-codesign --verbose
 
+      - name: Dump Xcode failure logs
+        if: failure()
+        run: |
+          echo "=== Searching for .xcresult bundles ==="
+          find "$HOME/Library/Developer/Xcode/DerivedData" -name "*.xcresult" -print 2>/dev/null | while read -r bundle; do
+            echo "--- $bundle ---"
+            xcrun xcresulttool get --legacy --path "$bundle" --format json 2>&1 | head -c 20000
+            echo
+          done
+
+          echo "=== Searching for .xcactivitylog files ==="
+          find "$HOME/Library/Developer/Xcode/DerivedData" -name "*.xcactivitylog" -print 2>/dev/null | while read -r log; do
+            echo "--- $log ---"
+            gunzip -c "$log" 2>&1 | strings | tail -c 20000
+            echo
+          done
+
       - name: Create IPA
         run: |
           mkdir -p Payload
