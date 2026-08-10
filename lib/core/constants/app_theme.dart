@@ -242,7 +242,7 @@ class AppTheme {
         centerTitle: true,
         titleTextStyle: AppTextStyles.title,
       ),
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         elevation: 0,
         color: AppColors.card,
         surfaceTintColor: Colors.transparent,
@@ -315,7 +315,7 @@ class AppTheme {
           borderSide: BorderSide(color: AppColors.danger, width: 1.5),
         ),
       ),
-      dialogTheme: const DialogTheme(
+      dialogTheme: const DialogThemeData(
         backgroundColor: AppColors.card,
         surfaceTintColor: Colors.transparent,
         titleTextStyle: AppTextStyles.title,
