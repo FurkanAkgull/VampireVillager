@@ -67,7 +67,10 @@
       "Bash(taskkill //F //PID 28444)",
       "Bash(venv/Scripts/python.exe -c ' *)",
       "Bash(venv/Scripts/python.exe -m pytest -q -rs --collect-only)",
-      "Bash(./venv/Scripts/python.exe -m pytest)"
+      "Bash(./venv/Scripts/python.exe -m pytest)",
+      "Bash(gh run *)",
+      "PowerShell(gh run *)",
+      "WebFetch(domain:github.com)"
     ],
     "additionalDirectories": [
       "c:\\Users\\PC\\Desktop\\VampireVillager\\.claude",
