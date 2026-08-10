@@ -70,7 +70,9 @@
       "Bash(./venv/Scripts/python.exe -m pytest)",
       "Bash(gh run *)",
       "PowerShell(gh run *)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "additionalDirectories": [
       "c:\\Users\\PC\\Desktop\\VampireVillager\\.claude",
