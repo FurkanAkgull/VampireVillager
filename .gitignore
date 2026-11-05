@@ -41,3 +41,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Python backend
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# Local AI-assistant tooling (kept privately, not part of the public repo)
+.claude/
